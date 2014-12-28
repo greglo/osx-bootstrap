@@ -1,15 +1,5 @@
 # Some stuff was taken from
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
-# and
-# https://github.com/paulmillr/dotfiles/blob/master/etc/osx.sh
-
-# General
-# =======
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "earth"
-sudo scutil --set HostName "earth"
-sudo scutil --set LocalHostName "earth"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "earth"
 
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
@@ -21,34 +11,13 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 
-# Screen
-# ======
-
-# Save screenshots to the downlaods.
-defaults write com.apple.screencapture location "$HOME/Downloads/"
-
-# Bottom right screen corner → Start screen saver
-defaults write com.apple.dock wvous-br-corner -int 5
-defaults write com.apple.dock wvous-br-modifier -int 0
-
 # Sound
 # =====
 #Disable the Startup Chime
 sudo nvram SystemAudioVolume=" "
 
-
 # Trackpad
 # ========
-
-# Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-sudo defaults write com.apple.AppleMultitouchTrackpad Clicking 1
-
-#Secondary click
-defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool true
-
 
 # Finder
 # ======
@@ -63,7 +32,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 
 # When performing a search, search the current folder by default
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+#defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false

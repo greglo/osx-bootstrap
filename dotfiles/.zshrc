@@ -6,11 +6,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,6 +48,18 @@ ZSH_THEME="ys"
 plugins=(git brew brew-cask history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
+
+# Aliases
+alias s="git status"
+alias d="git diff"
+alias p="git pull"
+alias h="git log -n 15 --pretty=oneline"
+alias ga="git add -A"
+
+alias ls="ls -GA"
+cd() {
+	builtin cd "$@" && ls
+}
 
 # User configuration
 
